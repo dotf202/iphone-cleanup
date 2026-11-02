@@ -1,0 +1,4 @@
+# Installed by /setup into .venv for the spyware scan.
+# Parsers in scripts/iphone_cleanup use only the Python standard library
+# and do not import this package.
+mvt>=2.2

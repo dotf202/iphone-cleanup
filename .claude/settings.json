@@ -1,0 +1,139 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "disableBypassPermissionsMode": "disable",
+    "disableAutoMode": "disable",
+    "allow": [
+      "Bash(python3 -m venv .venv)",
+      "Bash(python3 -m venv *)",
+      "Bash(python3 -m unittest discover -s tests *)",
+      "Bash(.venv/bin/pip install -r scripts/requirements.txt)",
+      "Bash(.venv/bin/pip show mvt)",
+      "Bash(.venv/bin/pip check)",
+      "Bash(brew install libimobiledevice *)",
+      "Bash(brew list *)",
+      "Bash(brew --prefix *)"
+    ],
+    "ask": [
+      "Bash(rm *)"
+    ],
+    "deny": [
+      "Bash(rm -rf ~*)",
+      "Bash(rm -rf /Users*)",
+      "Bash(rm -rf /home*)",
+      "Bash(rm -rf $HOME*)",
+      "Bash(rm -rf -- ~*)",
+      "Bash(rm -rf -- /Users*)",
+      "Bash(rm -rf -- /home*)",
+      "Bash(rm -rf -- $HOME*)",
+      "Bash(rm -fr ~*)",
+      "Bash(rm -fr /Users*)",
+      "Bash(rm -fr /home*)",
+      "Bash(rm -fr $HOME*)",
+      "Bash(sudo rm -rf ~*)",
+      "Bash(sudo rm -rf /Users*)",
+      "Bash(sudo rm -rf /home*)",
+      "Bash(sudo rm -rf $HOME*)",
+      "Bash(find * -delete *)",
+      "Bash(curl *)",
+      "Bash(/usr/bin/curl *)",
+      "Bash(/usr/local/bin/curl *)",
+      "Bash(/opt/homebrew/bin/curl *)",
+      "Bash(wget *)",
+      "Bash(scp *)",
+      "Bash(sftp *)",
+      "Bash(rsync *)",
+      "Bash(rclone *)",
+      "Bash(ssh *)",
+      "Bash(nc *)",
+      "Bash(ncat *)",
+      "Bash(socat *)",
+      "Bash(aws *)",
+      "Bash(gsutil *)",
+      "Bash(az *)",
+      "Bash(gcloud *)",
+      "Bash(gh gist *)",
+      "Bash(ngrok *)",
+      "Bash(cloudflared *)",
+      "Bash(git push *)",
+      "Bash(git add -f *)",
+      "Bash(git add data/*)",
+      "Bash(git add backups*)",
+      "Bash(git add reports/*)",
+      "Bash(*BACKUP_PASSWORD*)",
+      "Bash(*BACKUP_PASSWORD_NEW*)",
+      "Bash(* --password *)",
+      "Bash(bash -c *)",
+      "Bash(sh -c *)",
+      "Bash(zsh -c *)",
+      "Bash(python -c *)",
+      "Bash(python3 -c *)",
+      "Bash(.venv/bin/python -c *)",
+      "Bash(python -m http.server *)",
+      "Bash(python3 -m http.server *)",
+      "Bash(.venv/bin/python -m http.server *)",
+      "Bash(osascript *)",
+      "Bash(shortcuts *)",
+      "Bash(idevicebackup2 restore *)",
+      "Bash(idevicebackup2 encryption off *)",
+      "Bash(idevicebackup2 cloud *)",
+      "Bash(idevicebackup2 unback *)",
+      "Bash(idevicebackup2 changepw *)",
+      "Bash(idevicerestore *)",
+      "Bash(ideviceenterrecovery *)",
+      "Bash(idevicediagnostics *)",
+      "Bash(ideviceinstaller uninstall *)",
+      "Bash(ideviceinstaller --uninstall *)",
+      "Bash(ideviceinstaller -U *)",
+      "Bash(checkra1n *)",
+      "Bash(palera1n *)",
+      "Bash(unc0ver *)",
+      "Bash(dopamine *)",
+      "Bash(mvt-ios * -p *)",
+      "Bash(mvt * -p *)",
+      "Bash(.venv/bin/mvt-ios * -p *)",
+      "Bash(.venv/bin/mvt * -p *)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": false,
+    "autoAllowBashIfSandboxed": false,
+    "allowUnsandboxedCommands": false,
+    "excludedCommands": [
+      "idevicebackup2 *",
+      "idevice_id *",
+      "ideviceinfo *",
+      "ideviceinstaller *",
+      "idevicepair *"
+    ],
+    "filesystem": {
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws",
+        "~/Library/Keychains"
+      ]
+    },
+    "credentials": {
+      "envVars": [
+        { "name": "BACKUP_PASSWORD", "mode": "deny" },
+        { "name": "BACKUP_PASSWORD_NEW", "mode": "deny" }
+      ]
+    },
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "*.githubusercontent.com",
+        "ghcr.io",
+        "*.ghcr.io",
+        "pypi.org",
+        "*.pypi.org",
+        "files.pythonhosted.org",
+        "pypi.python.org",
+        "formulae.brew.sh",
+        "homebrew.github.io"
+      ]
+    }
+  }
+}

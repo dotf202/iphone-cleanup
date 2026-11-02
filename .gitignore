@@ -1,0 +1,43 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Claude Code local grants (may contain machine-specific allow rules)
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+
+# Backups and decrypted copies. Never commit these.
+backups/
+*.ipa
+*.mddata
+*.mdinfo
+
+# Personal data and generated outputs.
+data/raw/*
+!data/raw/.gitkeep
+data/out/*
+!data/out/.gitkeep
+reports/*
+!reports/.gitkeep
+!reports/TEMPLATE.md
+
+# Databases and iOS backup manifests, wherever they land.
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+Manifest.plist
+Info.plist
+Status.plist
+Manifest.db
+
+# Secrets
+.env
+*.key
+*.pem
